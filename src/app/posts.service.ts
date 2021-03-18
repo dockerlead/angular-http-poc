@@ -37,4 +37,10 @@ export class PostsService {
       return postsArray;
     }));
   }
+
+  deletePosts() {
+    return this.http.delete(
+      'https://angular-udemy-course-recipe-default-rtdb.firebaseio.com/posts.json'
+    );
+  }
 }
