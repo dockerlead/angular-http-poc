@@ -63,7 +63,8 @@ export class PostsService {
     return this.http.delete(
       'https://angular-udemy-course-recipe-default-rtdb.firebaseio.com/posts.json',
       {
-        observe: 'events'
+        observe: 'events',
+        responseType: 'text'
       }
     )
     .pipe(
