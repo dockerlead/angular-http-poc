@@ -14,8 +14,13 @@ export class AppComponent implements OnInit {
   ngOnInit() {}
 
   onCreatePost(postData: { title: string; content: string }) {
-    // Send Http request
-    console.log(postData);
+    this.http.post(
+      'https://angular-udemy-course-recipe-default-rtdb.firebaseio.com/posts.json',
+      postData
+    )
+    .subscribe(res => {
+      console.log(res)
+    });
   }
 
   onFetchPosts() {
